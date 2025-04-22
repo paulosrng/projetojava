@@ -77,3 +77,11 @@ CREATE TABLE PedidoServico (
     CONSTRAINT chk_quantidade_positiva CHECK (quantidade > 0),
     CONSTRAINT chk_preco_unitario_positivo CHECK (preco_unitario > 0)
 );
+
+-- Índices para melhorar performance
+CREATE INDEX idx_cliente_nome ON Cliente(nome);
+CREATE INDEX idx_cliente_tipo ON Cliente(tipo);
+CREATE INDEX idx_pacote_destino ON PacoteViagem(destino);
+CREATE INDEX idx_pacote_tipo ON PacoteViagem(tipo);
+CREATE INDEX idx_pedido_cliente ON Pedido(cliente_id);
+CREATE INDEX idx_pedido_data ON Pedido(data_viagem);
