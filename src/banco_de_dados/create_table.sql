@@ -23,3 +23,26 @@ CREATE TABLE Cliente (
     CONSTRAINT uk_passaporte UNIQUE (passaporte)
 );
 
+-- Tabela de Pacotes de Viagem
+CREATE TABLE PacoteViagem (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    destino VARCHAR(100) NOT NULL,
+    duracao INT NOT NULL,
+    preco DECIMAL(10,2) NOT NULL,
+    tipo VARCHAR(50) NOT NULL,
+    ativo BOOLEAN DEFAULT TRUE,
+    
+    CONSTRAINT chk_preco_positivo CHECK (preco > 0)
+);
+
+-- Tabela de Serviços Adicionais
+CREATE TABLE ServicoAdicional (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL,
+    descricao TEXT,
+    ativo BOOLEAN DEFAULT TRUE,
+    
+    CONSTRAINT chk_preco_servico_positivo CHECK (preco > 0)
+);
