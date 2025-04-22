@@ -9,4 +9,5 @@ public abstract class Cliente {
         this.telefone = telefone;
         this.email = email;
     }
+    public abstract String getDocumento();
 }
