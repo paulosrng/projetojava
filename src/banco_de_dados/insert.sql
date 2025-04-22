@@ -17,3 +17,9 @@ INSERT INTO ServicoAdicional (nome, preco, descricao) VALUES
 ('Passeio de Helicóptero', 800.00, 'Passeio panorâmico de helicóptero'),
 ('Aluguel de Carro', 120.00, 'Carro econômico por dia'),
 ('Guia Turístico', 300.00, 'Guia especializado por dia');
+
+-- Inserção de pedidos
+INSERT INTO Pedido (cliente_id, pacote_id, data_viagem, valor_total, status) VALUES
+(1, 1, '2023-12-15', 3500.00, 'CONFIRMADO'),
+(2, 3, '2024-02-20', 25000.00, 'PENDENTE'),
+(3, 4, '2024-06-01', 30000.00, 'CONFIRMADO');
