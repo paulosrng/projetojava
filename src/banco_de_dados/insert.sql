@@ -11,3 +11,9 @@ INSERT INTO PacoteViagem (nome, destino, duracao, preco, tipo) VALUES
 ('Tour Cultural Europa', 'Paris, Roma, Barcelona', 14, 25000.00, 'CULTURAL'),
 ('Lua de Mel Maldivas', 'Maldivas', 10, 30000.00, 'ROMANTICO');
 
+-- Inserção de serviços adicionais
+INSERT INTO ServicoAdicional (nome, preco, descricao) VALUES
+('Translado Aeroporto', 150.00, 'Transporte privativo do aeroporto até o hotel'),
+('Passeio de Helicóptero', 800.00, 'Passeio panorâmico de helicóptero'),
+('Aluguel de Carro', 120.00, 'Carro econômico por dia'),
+('Guia Turístico', 300.00, 'Guia especializado por dia');
