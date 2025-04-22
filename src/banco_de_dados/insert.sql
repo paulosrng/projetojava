@@ -23,3 +23,9 @@ INSERT INTO Pedido (cliente_id, pacote_id, data_viagem, valor_total, status) VAL
 (1, 1, '2023-12-15', 3500.00, 'CONFIRMADO'),
 (2, 3, '2024-02-20', 25000.00, 'PENDENTE'),
 (3, 4, '2024-06-01', 30000.00, 'CONFIRMADO');
+
+-- Inserção de serviços nos pedidos
+INSERT INTO PedidoServico (pedido_id, servico_id, quantidade, preco_unitario) VALUES
+(1, 1, 2, 150.00),
+(1, 3, 5, 120.00),
+(3, 2, 1, 800.00);
