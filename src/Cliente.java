@@ -36,3 +36,22 @@ public class ClienteNacional extends Cliente {
             return passaporte;
         }
     }
+    public abstract class PacoteViagem {
+        protected String nome;
+        protected String destino;
+        protected int duracao;
+        protected double preco;
+        protected String tipo;
+    
+        public PacoteViagem(String nome, String destino, int duracao, double preco, String tipo) {
+            if (destino == null || destino.isEmpty() || preco <= 0) {
+                throw new IllegalArgumentException("Pacote deve conter destino e preço válido");
+            }
+            this.nome = nome;
+            this.destino = destino;
+            this.duracao = duracao;
+            this.preco = preco;
+            this.tipo = tipo;
+        }
+        
+    }
