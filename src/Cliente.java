@@ -71,3 +71,21 @@ public class Passeio extends ServicoAdicional {
         super(nome, preco);
     }
 }
+
+public class Pedido {
+    private Cliente cliente;
+    private PacoteViagem pacote;
+    private List<ServicoAdicional> servicos;
+
+    public Pedido(Cliente cliente, PacoteViagem pacote) {
+        this.cliente = cliente;
+        this.pacote = pacote;
+        this.servicos = new ArrayList<>();
+    }
+
+    public void adicionarServico(ServicoAdicional servico) {
+        servicos.add(servico);
+    }
+
+    
+}
