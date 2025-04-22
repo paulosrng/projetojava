@@ -14,3 +14,23 @@ SELECT
 FROM PacoteViagem p
 LEFT JOIN Pedido pe ON p.id = pe.pacote_id
 GROUP BY p.id;
+
+-- View para pedidos detalhados
+CREATE VIEW vw_pedidos_detalhados AS
+SELECT 
+    pe.id AS pedido_id,
+    c.nome AS cliente_nome,
+    c.tipo AS cliente_tipo,
+    p.nome AS pacote_nome,
+    p.destino,
+    pe.data_contratacao,
+    pe.data_viagem,
+    pe.valor_total AS valor_pacote,
+    COALESCE(SUM(ps.preco_unitario * ps.quantidade), 0) AS valor_servicos,
+    (pe.valor_total + COALESCE(SUM(ps.preco_unitario * ps.quantidade), 0)) AS valor_total,
+    pe.status
+FROM Pedido pe
+JOIN Cliente c ON pe.cliente_id = c.id
+JOIN PacoteViagem p ON pe.pacote_id = p.id
+LEFT JOIN PedidoServico ps ON pe.id = ps.pedido_id
+GROUP BY pe.id;
