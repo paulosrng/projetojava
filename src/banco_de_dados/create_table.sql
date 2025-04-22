@@ -63,7 +63,7 @@ CREATE TABLE Pedido (
     CONSTRAINT chk_valor_total_positivo CHECK (valor_total > 0)
 );
 
-- Tabela de Serviços por Pedido (relacionamento Pedido-Serviço)
+-- Tabela de Serviços por Pedido (relacionamento Pedido-Serviço)
 CREATE TABLE PedidoServico (
     pedido_id INT NOT NULL,
     servico_id INT NOT NULL,
