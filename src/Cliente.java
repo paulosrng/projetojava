@@ -55,3 +55,19 @@ public class ClienteNacional extends Cliente {
         }
         
     }
+    public abstract class ServicoAdicional {
+        protected String nome;
+        protected double preco;
+    
+        public ServicoAdicional(String nome, double preco) {
+            this.nome = nome;
+            this.preco = preco;
+        }
+        
+    }
+
+public class Passeio extends ServicoAdicional {
+    public Passeio(String nome, double preco) {
+        super(nome, preco);
+    }
+}
